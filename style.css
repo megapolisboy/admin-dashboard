@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@500&display=swap");
+html {
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
 }
@@ -23,16 +29,30 @@ body {
           align-items: center;
 }
 
+#searchbar div {
+  font-size: 30px;
+}
+
 #bar {
   width: 80%;
-  background-color: #00ff62;
+  background-color: #e4e3e3;
   height: 100%;
+  border-radius: 30px;
 }
 
 #personal-data-card {
   width: 60%;
-  background: yellow;
-  height: 100%;
+}
+
+#personal-data-card .avatar {
+  font-size: 60px;
+  color: orange;
+  font-size: 90px;
+  margin: 0;
+}
+
+#name {
+  font-size: 35px;
 }
 
 #personal-data {
@@ -74,7 +94,6 @@ header {
 header .search {
   width: 90%;
   justify-self: center;
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,10 +107,18 @@ header .search {
   gap: 30px;
 }
 
+header .search div {
+  font-size: 30px;
+}
+
+header .search .avatar {
+  font-size: 60px;
+  color: orange;
+}
+
 header .data {
   width: 90%;
   justify-self: center;
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,6 +130,17 @@ header .data {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
+}
+
+header .data button {
+  background-color: #6d6dee;
+  width: 100px;
+  font-size: 20px;
+  color: white;
+  font-family: inherit;
+  height: 40px;
+  border: 0;
+  border-radius: 35px;
 }
 
 #container {
@@ -127,10 +165,20 @@ header .data {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  justify-items: center;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   gap: 60px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#container .sidebar .dashboard {
+  font-size: 40px;
+}
+
+#container .sidebar .dashboard .material-icons {
+  font-size: 45px;
 }
 
 #container .sidebar .item {
@@ -140,8 +188,8 @@ header .data {
       grid-template-columns: 1fr 9fr;
   justify-items: left;
   gap: 20px;
-  border: 1px solid black;
-  margin: 15px 0 15px 0;
+  margin: 15px 0 15px 30px;
+  width: 70%;
 }
 
 #container .content {
@@ -149,7 +197,7 @@ header .data {
   display: grid;
   -ms-grid-columns: 2.8fr 1fr;
       grid-template-columns: 2.8fr 1fr;
-  margin: 20px 20px 50px 20px;
+  margin: 20px 20px 10px 20px;
 }
 
 #content-wrap {
@@ -178,8 +226,8 @@ header .data {
   background: red;
 }
 
-#projects {
-  border: 1px solid blue;
+#projects div:first-child {
+  margin-bottom: 10px;
 }
 
 #other {
@@ -195,7 +243,7 @@ header .data {
 }
 
 #other .header {
-  font-size: 35px;
+  font-size: 22px;
   margin-left: 5%;
 }
 
@@ -231,7 +279,7 @@ header .data {
 }
 
 #projects .header {
-  font-size: 35px;
+  font-size: 22px;
   margin-left: 5%;
 }
 
@@ -247,12 +295,48 @@ header .data {
 }
 
 #projects .project-grid .project-card {
-  background-color: red;
-  border: 1px solid white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
   width: 400px;
   height: 200px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
+  -ms-grid-row-align: center;
       align-self: center;
+}
+
+#projects .project-grid .project-card div {
+  width: 90%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#projects .project-grid .project-card div:first-child {
+  padding-top: 10px;
+}
+
+#projects .project-grid .project-card div:first-child div:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#projects .project-grid .project-card div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 30px;
 }
 /*# sourceMappingURL=style.css.map */
