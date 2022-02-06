@@ -2,7 +2,7 @@
 
 $sidebar-color: rgb(109, 109, 238);
 $header-color: rgb(255, 255, 255);
-$content-color: rgb(192, 192, 192);
+$content-color: rgb(220, 224, 240);
 
 html {
   font-family: 'Permanent Marker', cursive;
@@ -175,11 +175,10 @@ header {
 }
 
 #other {
-  border: 1px solid red;
   min-width: 310px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 6fr 1fr 6fr;
+  grid-template-rows: 0.2fr 6fr 0.2fr 6fr;
   gap: 10px;
   .header {
     @include header();
@@ -187,11 +186,45 @@ header {
 
   .other-data {
     padding: 20px;
-    background-color: yellow;
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
+    border-radius: 15px;
+
+    div {
+      font-size: 12px;
+      div:first-child {
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .trending {
+    .material-icons {
+      font-size: 60px;
+      color: orange;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+
+        div:nth-child(2) {
+          font-size: 16px;
+          color: rgb(139, 139, 139);
+        }
+      }
+    }
   }
 
   hr {
@@ -222,7 +255,6 @@ header {
       grid-template-rows: 1fr 1fr;
       background-color: white;
       border-radius: 10px;
-      border: 1px solid rgb(0, 0, 0);
       width: 400px;
       height: 200px;
       align-self: center;
