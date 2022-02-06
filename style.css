@@ -2,17 +2,62 @@ body {
   margin: 0;
 }
 
-#container {
-  display: -ms-grid;
-  display: grid;
-  height: 100vh;
-  -ms-grid-columns: 1fr 3.25fr;
-      grid-template-columns: 1fr 3.25fr;
-  -ms-grid-rows: 1fr 4fr;
-      grid-template-rows: 1fr 4fr;
+#searchbar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#container header {
+#bar {
+  width: 80%;
+  background-color: #00ff62;
+  height: 100%;
+}
+
+#personal-data-card {
+  width: 60%;
+  background: yellow;
+  height: 100%;
+}
+
+#personal-data {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+header {
   background-color: white;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -23,9 +68,10 @@ body {
   display: grid;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+  min-height: 200px;
 }
 
-#container header .search {
+header .search {
   width: 90%;
   justify-self: center;
   border: 1px solid black;
@@ -42,34 +88,7 @@ body {
   gap: 30px;
 }
 
-#container header .search #searchbar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  gap: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#container header .search #searchbar #bar {
-  width: 80%;
-  background-color: #00ff62;
-  height: 100%;
-}
-
-#container header .data {
+header .data {
   width: 90%;
   justify-self: center;
   border: 1px solid black;
@@ -86,32 +105,14 @@ body {
   gap: 30px;
 }
 
-#container header .data #personal-data {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  gap: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-}
-
-#container header .data #personal-data #personal-data-card {
-  width: 60%;
-  background: yellow;
-  height: 100%;
+#container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: 1fr 3.25fr;
+      grid-template-columns: 1fr 3.25fr;
+  -ms-grid-rows: 1fr 4fr;
+      grid-template-rows: 1fr 4fr;
 }
 
 #container .sidebar {
@@ -122,9 +123,136 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  gap: 60px;
+}
+
+#container .sidebar .item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 9fr;
+      grid-template-columns: 1fr 9fr;
+  justify-items: left;
+  gap: 20px;
+  border: 1px solid black;
+  margin: 15px 0 15px 0;
 }
 
 #container .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.8fr 1fr;
+      grid-template-columns: 2.8fr 1fr;
+  margin: 20px 20px 50px 20px;
+}
+
+#content-wrap {
   background-color: silver;
+}
+
+#personal-data-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+#personal-data-card img {
+  height: 100%;
+  background: red;
+}
+
+#projects {
+  border: 1px solid blue;
+}
+
+#other {
+  border: 1px solid red;
+  min-width: 310px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 6fr 1fr 6fr;
+      grid-template-rows: 1fr 6fr 1fr 6fr;
+  gap: 10px;
+}
+
+#other .header {
+  font-size: 35px;
+  margin-left: 5%;
+}
+
+#other .other-data {
+  padding: 20px;
+  background-color: yellow;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#other hr {
+  width: 100%;
+  -ms-grid-column-align: normal;
+      justify-self: normal;
+}
+
+#projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: flex-start;
+  min-width: 440px;
+}
+
+#projects .header {
+  font-size: 35px;
+  margin-left: 5%;
+}
+
+#projects .project-grid {
+  margin-left: 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -ms-grid-rows: 6fr 6fr 6fr;
+      grid-template-rows: 6fr 6fr 6fr;
+  gap: 20px;
+}
+
+#projects .project-grid .project-card {
+  background-color: red;
+  border: 1px solid white;
+  width: 400px;
+  height: 200px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

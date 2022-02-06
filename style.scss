@@ -26,55 +26,151 @@ body {
   align-items: center;
 }
 
+@mixin header {
+  font-size: 35px;
+  margin-left: 5%;
+}
+
+#searchbar {
+  @include header-left;
+}
+
+#bar {
+  width: 80%;
+  background-color: rgb(0, 255, 98);
+  height: 100%;
+}
+#personal-data-card {
+  width: 60%;
+  background: yellow;
+  height: 100%;
+}
+
+#personal-data {
+  @include header-left;
+  height: 100%;
+}
+
+header {
+  background-color: $header-color;
+  grid-row: 1;
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 200px;
+
+  .search {
+    @include flex-for-header;
+  }
+
+  .data {
+    @include flex-for-header;
+  }
+}
+
 #container {
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 3.25fr;
   grid-template-rows: 1fr 4fr;
 
-  header {
-    background-color: $header-color;
-    grid-row: 1;
-    grid-column: 2 / 3;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-
-    .search {
-      @include flex-for-header;
-
-      #searchbar {
-        @include header-left;
-        #bar {
-          width: 80%;
-          background-color: rgb(0, 255, 98);
-          height: 100%;
-        }
-      }
-    }
-
-    .data {
-      @include flex-for-header;
-
-      #personal-data {
-        @include header-left;
-        height: 100%;
-
-        #personal-data-card {
-          width: 60%;
-          background: yellow;
-          height: 100%;
-        }
-      }
-    }
-  }
-
   .sidebar {
     background-color: $sidebar-color;
     grid-row: 1 / 3;
     grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: flex-start;
+    gap: 60px;
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      justify-items: left;
+      gap: 20px;
+      border: 1px solid black;
+      margin: 15px 0 15px 0;
+    }
   }
 
   .content {
-    background-color: $content-color;
+    display: grid;
+    grid-template-columns: 2.8fr 1fr;
+    margin: 20px 20px 50px 20px;
+  }
+}
+
+#content-wrap {
+  background-color: $content-color;
+}
+
+#personal-data-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    height: 100%;
+    background: red;
+  }
+}
+
+#projects {
+  border: 1px solid blue;
+}
+
+#other {
+  border: 1px solid red;
+  min-width: 310px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr 1fr 6fr;
+  gap: 10px;
+  .header {
+    @include header();
+  }
+
+  .other-data {
+    padding: 20px;
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+  }
+
+  hr {
+    width: 100%;
+    justify-self: normal;
+  }
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  min-width: 440px;
+
+  .header {
+    @include header();
+  }
+
+  .project-grid {
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: 6fr 6fr 6fr;
+    gap: 20px;
+
+    .project-card {
+      background-color: red;
+      border: 1px solid white;
+      width: 400px;
+      height: 200px;
+      align-self: center;
+    }
   }
 }
